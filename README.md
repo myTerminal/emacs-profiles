@@ -22,9 +22,9 @@ Start the package with:
 
     (require 'emacs-profiles)
 
-### MELPA / Marmalade
+### Marmalade
 
-If you have MELPA or Marmalade added as a repository to your Emacs, you can just install *emacs-profiles* with
+If you have Marmalade added as a repository to your Emacs, you can just install *emacs-profiles* with
 
     M-x package-install emacs-profiles RET
 
