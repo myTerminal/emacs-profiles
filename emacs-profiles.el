@@ -83,10 +83,12 @@
 (defvar emacs-profiles--buffer-name
   " *emacs-profiles*")
 
+;;;###autoload
 (defun emacs-profiles-set-profiles-data (data)
   (setq emacs-profiles--profiles-data
         data))
 
+;;;###autoload
 (defun emacs-profiles-show-menu ()
   (interactive)
   (let ((my-buffer (get-buffer-create emacs-profiles--buffer-name)))
