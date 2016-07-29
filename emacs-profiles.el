@@ -144,4 +144,6 @@
  (list '("0" "Stock Emacs"
          (lambda ()))))
 
+(provide 'emacs-profiles)
+
 ;;; emacs-profiles.el ends here
