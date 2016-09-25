@@ -6,7 +6,7 @@
 ;; Keywords: convenience, shortcuts
 ;; Maintainer: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Created: 2016/06/04
-;; Package-Requires: ((emacs "24") (cl-lib "0.5"))
+;; Package-Requires: ((emacs "24") (cl-lib "0.5") (prompt-you "20160925.1115"))
 ;; Description: Configuration profiles for Emacs
 ;; URL: http://ismail.teamfluxion.com
 ;; Compatibility: Emacs24
@@ -80,9 +80,6 @@
 (defvar emacs-profiles--profiles-data
   nil)
 
-(defvar emacs-profiles--buffer-name
-  " *emacs-profiles*")
-
 ;;;###autoload
 (defun emacs-profiles-set-profiles-data (data)
   (setq emacs-profiles--profiles-data
@@ -91,54 +88,9 @@
 ;;;###autoload
 (defun emacs-profiles-show-menu ()
   (interactive)
-  (let ((my-buffer (get-buffer-create emacs-profiles--buffer-name)))
-    (set-window-buffer (get-buffer-window)
-                       my-buffer)
-    (other-window 1)
-    (emacs-profiles--prepare-controls emacs-profiles--profiles-data)))
-
-(defun emacs-profiles--hide-menu ()
-  (let ((my-window (get-buffer-window (get-buffer-create emacs-profiles--buffer-name))))
-    (cond ((windowp my-window) (progn
-                                 (kill-buffer (get-buffer-create emacs-profiles--buffer-name)))))))
-
-(defun emacs-profiles--prepare-controls (objects)
-  (princ "Select a profile to load:\n\n"
-         (get-buffer-create emacs-profiles--buffer-name))
-  (mapc 'emacs-profiles--display-controls-bindings
-        objects)
-  (emacs-profiles-mode)
-  (mapc 'emacs-profiles--apply-keyboard-bindings
-        objects))
-
-(defun emacs-profiles--apply-keyboard-bindings (object)
-  (let ((profile-name (nth 1 object))
-        (func (nth 2 object)))
-    (local-set-key (kbd (car object))
-                   (lambda ()
-                     (interactive)
-                     (funcall func)
-                     (emacs-profiles--hide-menu)
-                     (message (concat "Loaded profile: "
-                                      profile-name))))))
-
-(defun emacs-profiles--display-controls-bindings (object)
-  (princ (cl-concatenate 'string
-                         "["
-                         (nth 0 
-                              object)
-                         "] - "
-                         (nth 1
-                              object)
-                         "\n")
-         (get-buffer-create emacs-profiles--buffer-name)))
-
-(define-derived-mode emacs-profiles-mode 
-  special-mode 
-  "emacs-profiles"
-  :abbrev-table nil
-  :syntax-table nil
-  nil)
+  (prompt-you-now "Select a profile to load:"
+                  emacs-profiles--profiles-data
+                  "Loaded profile: "))
 
 (emacs-profiles-set-profiles-data 
  (list '("0" "Stock Emacs"
