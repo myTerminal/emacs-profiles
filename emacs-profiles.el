@@ -2,9 +2,9 @@
 
 ;; This file is not part of Emacs
 
-;; Author: Ismail Ansari team.terminal@aol.in
+;; Author: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Keywords: convenience, shortcuts
-;; Maintainer: Ismail Ansari team.terminal@aol.in
+;; Maintainer: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Created: 2016/06/04
 ;; Package-Requires: ((emacs "24") (cl-lib "0.5"))
 ;; Description: Configuration profiles for Emacs
