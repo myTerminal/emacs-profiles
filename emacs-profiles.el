@@ -6,7 +6,7 @@
 ;; Keywords: convenience, shortcuts
 ;; Maintainer: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Created: 2016/06/04
-;; Package-Requires: ((emacs "24") (cl-lib "0.5") (prompt-you "20160925.1115"))
+;; Package-Requires: ((emacs "24") (cl-lib "0.5") (prompt-you "20170620.2315"))
 ;; Description: Configuration profiles for Emacs
 ;; URL: http://ismail.teamfluxion.com
 ;; Compatibility: Emacs24
