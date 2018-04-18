@@ -54,3 +54,7 @@ Each item in the list should contain three elements:
 * A function to be executed against the key, the function that contains all scripts to be executed to apply that particular configuration.
 
 Lastly, you can also call `emacs-profiles-show-menu` at startup so that you can choose which profile to start Emacs in when you start it.
+
+## Dependencies
+
+* [prompt-you](https://github.com/myTerminal/prompt-you)
