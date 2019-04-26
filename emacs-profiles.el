@@ -1,4 +1,4 @@
-;;; emacs-profiles.el --- Configuration profiles for Emacs -*- lexical-binding: t; coding: utf-8; -*-
+;;; emacs-profiles.el --- Configuration profiles for Emacs -*- lexical-binding: t; -*-
 
 ;; This file is not part of Emacs
 
