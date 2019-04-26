@@ -7,7 +7,7 @@
 ;; Keywords: convenience, shortcuts
 ;; Maintainer: Mohammed Ismail Ansari <team.terminal@gmail.com>
 ;; Created: 2016/06/04
-;; Package-Requires: ((emacs "24") (cl-lib "0.5") (prompt-you "20170620.2315"))
+;; Package-Requires: ((emacs "24") (prompt-you "20170620.2315"))
 ;; Description: Configuration profiles for Emacs
 ;; URL: http://ismail.teamfluxion.com
 ;; Compatibility: Emacs24
@@ -41,12 +41,12 @@
 ;; You can also define your configuration as
 ;;
 ;;     (emacs-profiles-set-profiles-data
-;;         (list '("1" 
-;;                 "Office" 
+;;         (list '("1"
+;;                 "Office"
 ;;                 (lambda ()
 ;;                     (invert-face 'default)))
-;;               '("2" 
-;;                 "Home" 
+;;               '("2"
+;;                 "Home"
 ;;                 (lambda ()
 ;;                     (menu-bar-mode -1)
 ;;                     (tool-bar-mode -1)
@@ -76,8 +76,6 @@
 
 ;;; Code:
 
-(require 'cl-lib)
-
 (defvar emacs-profiles--profiles-data
   nil)
 
@@ -93,7 +91,7 @@
                   emacs-profiles--profiles-data
                   "Loaded profile: "))
 
-(emacs-profiles-set-profiles-data 
+(emacs-profiles-set-profiles-data
  (list '("0" "Stock Emacs"
          (lambda ()))))
 
