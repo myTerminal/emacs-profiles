@@ -81,11 +81,13 @@
 
 ;;;###autoload
 (defun emacs-profiles-set-profiles-data (data)
+  "Set profiles data."
   (setq emacs-profiles--profiles-data
         data))
 
 ;;;###autoload
 (defun emacs-profiles-show-menu ()
+  "Shows a list of profiles to choose from."
   (interactive)
   (prompt-you-now "Select a profile to load:"
                   emacs-profiles--profiles-data
